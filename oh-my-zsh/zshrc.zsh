@@ -10,6 +10,9 @@ plugins=(
 	"command-not-found"
 	"extract"
 
+	"load-gvm"
+	"load-nvm"
+
 	"mac-surge"
 	"xtom-network-switch"
 

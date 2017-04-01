@@ -24,4 +24,5 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 source "$ZSH/oh-my-zsh.sh"
 
-alias cls="echo -e '\0033\0143' && clear"
+alias reset="printf '\033\143'"
+alias cls="reset"

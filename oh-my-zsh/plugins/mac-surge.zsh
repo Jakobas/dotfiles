@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148,SC2028
 if [[ "$(uname)" != 'Darwin' ]]; then
 	return
 fi
@@ -29,3 +30,11 @@ surge() {
 			;;
 	esac
 }
+
+_surge() {
+	local -r commands=('on' 'off' 'echo')
+	compset -P '*,'
+	compadd -S '' "${commands[@]}"
+}
+
+compdef '_surge' 'surge'

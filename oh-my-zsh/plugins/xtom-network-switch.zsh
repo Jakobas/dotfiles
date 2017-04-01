@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 xtom-network-switch() {
 	local MODE_NAME
 	case "$1" in

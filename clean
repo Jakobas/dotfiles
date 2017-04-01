@@ -1,0 +1,17 @@
+#!/bin/bash
+paths=(
+	"$HOME/.bash_history"
+	"$HOME/.bash_sessions"
+	"$HOME/.oh-my-zsh/cache/*"
+	"$HOME/.viminfo"
+	"$HOME/.wget-hsts"
+	"$HOME/.yjp"
+	"$HOME/.zcompdump*"
+	"$HOME/.zsh_history"
+	"$HOME/.zshrc.zwc"
+)
+
+IFS=$"\n"
+for path in "${paths[@]}"; do
+	rm -rvf ${path}
+done

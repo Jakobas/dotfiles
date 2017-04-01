@@ -1,5 +1,5 @@
-# shellcheck disable=SC2148,SC2028
-if [[ "$(uname)" != 'Darwin' ]]; then
+# shellcheck disable=SC2148
+if [[ $OSTYPE != darwin* ]]; then
 	return
 fi
 
@@ -20,12 +20,11 @@ surge() {
 			echo "http_proxy=$http_proxy"
 			echo "https_proxy=$https_proxy"
 			;;
+		status)
+			[[ "$proxy" == "$http_proxy" && "$proxy" == "$https_proxy" ]] && echo on || echo off
+			;;
 		*)
-			if [[ "$proxy" == "$http_proxy" ]] && [[ "$proxy" == "$https_proxy" ]]; then
-				echo "status: on\n"
-			else
-				echo "status: off\n"
-			fi
+			printf "status: %s\n" "$($0 status)"
 			echo "usage: $0 {on,off,echo}"
 			;;
 	esac

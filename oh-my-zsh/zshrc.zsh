@@ -10,13 +10,11 @@ plugins=(
 	"command-not-found"
 	"extract"
 
-	"load-gvm"
-	"load-nvm"
+	"load-envs"
 
 	"mac-surge"
-	"xtom-network-switch"
 
-	"dot-bin"
+	"xtom-network-switch"
 )
 
 export LANG="en_US.UTF-8"

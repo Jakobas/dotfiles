@@ -6,12 +6,12 @@ fi
 surge() {
 	local -r proxy="http://127.0.0.1:6152"
 	case "$1" in
-		on)
+		set)
 			export http_proxy="$proxy"
 			export https_proxy="$proxy"
 			echo "set HTTP_PROXY, HTTPS_PROXY done"
 			;;
-		off)
+		unset)
 			unset http_proxy
 			unset https_proxy
 			echo "unset HTTP_PROXY, HTTPS_PROXY done"
@@ -21,17 +21,17 @@ surge() {
 			echo "https_proxy=$https_proxy"
 			;;
 		status)
-			[[ "$proxy" == "$http_proxy" && "$proxy" == "$https_proxy" ]] && echo on || echo off
+			[[ "$proxy" == "$http_proxy" && "$proxy" == "$https_proxy" ]] && echo 'set' || echo 'unset'
 			;;
 		*)
 			printf "status: %s\n" "$($0 status)"
-			echo "usage: $0 {on,off,echo}"
+			echo "usage: $0 {set,unset,echo}"
 			;;
 	esac
 }
 
 _surge() {
-	local -r commands=('on' 'off' 'echo')
+	local -r commands=('set' 'unset' 'echo')
 	compset -P '*,'
 	compadd -S '' "${commands[@]}"
 }

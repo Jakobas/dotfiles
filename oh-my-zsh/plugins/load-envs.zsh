@@ -7,3 +7,5 @@
 [[ -d "$HOME/.nvm" ]] && source "$HOME/.nvm/nvm.sh"
 # load go version manager
 [[ -d "$HOME/.gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# load python virtualenvwrapper
+[[ -f "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"

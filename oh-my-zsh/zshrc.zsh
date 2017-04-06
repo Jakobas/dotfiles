@@ -9,11 +9,10 @@ plugins=(
 	"sudo"
 	"command-not-found"
 	"extract"
+	"dotenv"
 
 	"load-envs"
-
 	"mac-surge"
-
 	"xtom-network-switch"
 )
 

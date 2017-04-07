@@ -1,11 +1,17 @@
 # shellcheck disable=SC2148,SC1090
-# set brew bin path
-[[ -d "/usr/local/sbin" ]] && export PATH="/usr/local/sbin:$PATH"
-# set dot bin path
-[[ -d "$HOME/.bin" ]] && export PATH="$HOME/.bin:$PATH"
-# load node version manager
-[[ -d "$HOME/.nvm" ]] && source "$HOME/.nvm/nvm.sh"
-# load go version manager
-[[ -d "$HOME/.gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-# load python virtualenvwrapper
-[[ -f "/usr/local/bin/virtualenvwrapper.sh" ]] && source "/usr/local/bin/virtualenvwrapper.sh"
+add_bin_path() {
+	[[ -d "$1" ]] && export PATH="$1:$PATH"
+}
+
+load_env() {
+	[[ -f "$1" ]] && source "$1"
+}
+
+add_bin_path "/usr/local/sbin"
+add_bin_path "$HOME/.bin"
+load_env "$HOME/.nvm/nvm.sh"
+load_env "$HOME/.gvm/scripts/gvm"
+load_env "/usr/local/bin/virtualenvwrapper.sh"
+
+unset -f add_bin_path
+unset -f load_env

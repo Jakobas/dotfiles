@@ -1,0 +1,11 @@
+Host downloader
+	HostName	10.233.233.200
+	Port		22
+	User		root
+
+Host *
+	ControlMaster auto
+	ControlPath /tmp/ssh-%r@%h:%p
+	ControlPersist yes
+	Compression yes
+	CompressionLevel 7

@@ -11,6 +11,9 @@
     ~/.gitconfig:
       force: true
       path: gitconfig
+    ~/.ssh/config:
+      force: true
+      path: sshconfig
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

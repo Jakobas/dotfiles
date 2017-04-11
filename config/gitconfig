@@ -1,3 +1,6 @@
+# vim: set syntax=gitconfig:
+# vim: set smartindent:
+
 [user]
 	name = Septs
 	email = github@septs.pw

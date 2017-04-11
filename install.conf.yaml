@@ -10,10 +10,10 @@
       path: oh-my-zsh/zshrc.zsh
     ~/.gitconfig:
       force: true
-      path: gitconfig
+      path: config/gitconfig
     ~/.ssh/config:
       force: true
-      path: sshconfig
+      path: config/sshconfig
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

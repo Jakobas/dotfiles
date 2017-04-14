@@ -18,6 +18,7 @@ plugins=(
 
 export LANG="en_US.UTF-8"
 export MANPATH="/usr/local/man:$MANPATH"
+export EDITOR="$([[ -n $SSH_CONNECTION ]] && echo 'vim' || echo 'mvim')"
 
 source "$ZSH/oh-my-zsh.sh"
 

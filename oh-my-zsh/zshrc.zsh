@@ -1,6 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="jnrowe"
+ZSH_THEME="robbyrussell"
 ZSH_CUSTOM="$HOME/.dotfiles/oh-my-zsh/plugins"
 
 plugins=(
